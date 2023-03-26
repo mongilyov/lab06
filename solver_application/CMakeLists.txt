@@ -35,7 +35,7 @@ if(CPACK_GENERATOR_MSI)
 endif()
 if(CPACK_GENERATOR_DMG)
     set(MACOSX_BUNDLE TRUE)
-    set(CPACK_GENERATOR "DragNDrop")
+    set(CPACK_GENERATOR "DMG")
 endif()
 include(CPack)
 
