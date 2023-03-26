@@ -17,19 +17,8 @@ jobs:
         run: sudo apt install cmake g++
           
       - name: Build Solver App with Debian Generator
-        run: |
-	  cd solver_application/build
-          cmake -DCPACK_GENERATOR_DEB=ON
-          make package
-          make package_source
-        
-      - name: Moving to temporary folder
-        run: |
-	  mkdir artifacts
-          mv solver_application/build/*.deb artifacts
-          mv solver_application/build/*.zip artifacts
-          mv solver/application/build/*.tar.gz artifacts
-          
+        run: ./scripts/debianPackage.sh      
+
       - name: Create a release
         id: create_release
         uses: actions/create-release@v1
