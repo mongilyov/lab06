@@ -23,5 +23,8 @@ jobs:
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: false
-          files: artifacts/*
+          files: |
+		artifacts/solverApp-0.1.1-Linux.deb
+		artifacts/solverApp-0.1.1-Source.tar.gz
+		artifacts/solverApp-0.1.1-Source.zip
         id: "automatic_releases"
