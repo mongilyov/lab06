@@ -2,11 +2,8 @@ name: Make Debian Package
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-#    tags:
-#      - "debian-v*"
+     tags:
+       - "debian-v*"
 jobs:
   release:
     runs-on: ubuntu-latest
