@@ -1,11 +1,14 @@
+---
 name: Make Debian Package
 
 on:
   push:
      tags:
        - "debian-v*"
+
 jobs:
   release:
+    name: release
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -14,10 +17,11 @@ jobs:
         run: sudo apt install cmake g++
           
       - name: Build Solver App with Debian Generator
-        run: ./scripts/debianPackage.sh      
+        run: ./scripts/debianPackage.sh
 
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
-	  repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          prerelease: false	  
-	  files: artifacts/*
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
+          files: artifacts/*
+        id: "automatic_releases"
