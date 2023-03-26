@@ -2,8 +2,10 @@ name: Make Debian Package
 
 on:
  push:
-    tags:
-      - "*deb_v*"
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
    
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
