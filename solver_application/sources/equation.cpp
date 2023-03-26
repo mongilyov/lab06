@@ -5,6 +5,7 @@
 
 int main()
 {
+    std::cout << "Quick interruption in code" << std::endl;
     float a = 0;
     float b = 0;
     float c = 0;
