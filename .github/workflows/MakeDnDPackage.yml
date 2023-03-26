@@ -3,10 +3,11 @@ name: Make Drag And Drop Package
 on:
   push:
     tags:
-      - "dmg-v*"
+      - "v*.*.*-dmg"
 
 jobs:
   release:
+    name: release
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -15,10 +16,11 @@ jobs:
         run: sudo apt install cmake g++
           
       - name: Build Solver App with Debian Generator
-        run: ./scripts/dragndropPackage.sh      
+        run: ./scripts/dragndropPackage.sh
 
-      - name: Github Actions Release
-        id: create_release
-        uses: "marvinpinto/action-automatic-releases@latest"
+      - uses: "marvinpinto/action-automatic-releases@latest"
         with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: false
+          files: solver_application/artifacts/*
+        id: "automatic_releases"
