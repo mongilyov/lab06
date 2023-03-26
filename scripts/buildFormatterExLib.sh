@@ -1,5 +1,4 @@
-pwd
-mkdir ../formatter_ex_lib/build
-cd ../formatter_ex_lib/build
+mkdir formatter_ex_lib/build
+cd formatter_ex_lib/build
 cmake ..
 make
