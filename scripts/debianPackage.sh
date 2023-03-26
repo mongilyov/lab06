@@ -3,11 +3,8 @@ cd solver_application/build
 cmake -DCPACK_GENERATOR_DEB=ON ..
 make package
 make package_source
+cd ..
 mkdir artifacts
-pwd          
-ls
-pwd
-ls solver_application/build
-mv solver_application/build/*.deb artifacts
-mv solver_application/build/*.zip artifacts
-mv solver_application/build/*.tar.gz artifacts
+mv build/*.deb artifacts
+mv build/*.zip artifacts
+mv build/*.tar.gz artifacts
