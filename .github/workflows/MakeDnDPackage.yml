@@ -15,7 +15,7 @@ jobs:
       - name: Building preparation
         run: sudo apt install cmake g++
           
-      - name: Build Solver App with Debian Generator
+      - name: Build Solver App with Drag and Drop Generator
         run: ./scripts/dragndropPackage.sh
 
       - uses: "marvinpinto/action-automatic-releases@latest"
