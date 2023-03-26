@@ -1,3 +1,4 @@
 formatter_ex_lib/build
 solver_lib/build
 solver_application/build
+formatter_lib/build
