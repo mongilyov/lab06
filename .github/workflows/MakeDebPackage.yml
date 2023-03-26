@@ -4,7 +4,7 @@ name: Make Debian Package
 on:
   push:
      tags:
-       - "debian-v*"
+       - "v*"
 
 jobs:
   release:
