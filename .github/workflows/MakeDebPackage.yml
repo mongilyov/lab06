@@ -16,8 +16,7 @@ jobs:
       - name: Build Solver App with Debian Generator
         run: ./scripts/debianPackage.sh      
 
-      - name: Github Actions Release
-        uses: "marvinpinto/action-automatic-releases@latest"
+      - uses: "marvinpinto/action-automatic-releases@latest"
         with:
 	  repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: false	  
