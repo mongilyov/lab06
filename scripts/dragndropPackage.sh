@@ -1,3 +1,4 @@
+cmake --version
 mkdir solver_application/build
 cd solver_application/build
 cmake -DCPACK_GENERATOR_DMG=ON ..
