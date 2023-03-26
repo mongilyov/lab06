@@ -18,12 +18,10 @@ jobs:
           
       - name: Build Solver App with Debian Generator
         run: |
-          cmake -DCPACK_GENERATOR_DEB=ON -B ./_build
-          cd _build
+	  cd solver_application/build
+          cmake -DCPACK_GENERATOR_DEB=ON
           make package
           make package_source
-          cd ..
-          cd ..
         
       - name: Moving to temporary folder
         run: |
